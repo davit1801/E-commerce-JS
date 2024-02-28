@@ -175,6 +175,7 @@ section {
     padding: 10px;
     border: 1px solid #171427;
     transition: 0.4s;
+    cursor: pointer;
 }
 
 .img-container{

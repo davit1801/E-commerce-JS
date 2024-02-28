@@ -8,12 +8,12 @@ async function getData() {
     const url = `https://dummyjson.com/products?limit=30`;
     const res = await fetch(url);
     const data = await res.json();
-    createProduct(data);
     const addCart = document.getElementsByClassName("add-cart");
     for (let i = 0; i < addCart.length; i++) {
         const button = addCart[i];
         button.addEventListener("click", addCartClicked);
     }
+    createProduct(data);
 }
 
 getData();
@@ -31,6 +31,9 @@ function createProduct(product) {
         <span class="product-price">${item.price}$</span>
         <i class="bx bx-shopping-bag add-cart"></i>`;
         shopContent.appendChild(productBox);
+        productBox.addEventListener("click",() =>{
+            window.location.href = `description.html?id=${item.id}`
+        })
     });
 }
 
