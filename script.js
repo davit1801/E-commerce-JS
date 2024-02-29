@@ -8,13 +8,15 @@ async function getData() {
     const url = `https://dummyjson.com/products?limit=30`;
     const res = await fetch(url);
     const data = await res.json();
+    createProduct(data);
     const addCart = document.getElementsByClassName("add-cart");
     for (let i = 0; i < addCart.length; i++) {
         const button = addCart[i];
         button.addEventListener("click", addCartClicked);
     }
-    createProduct(data);
+    
 }
+
 
 getData();
 
@@ -31,7 +33,7 @@ function createProduct(product) {
         <span class="product-price">${item.price}$</span>
         <i class="bx bx-shopping-bag add-cart"></i>`;
         shopContent.appendChild(productBox);
-        productBox.addEventListener("click",() =>{
+        productBox.addEventListener("click",() => {
             window.location.href = `description.html?id=${item.id}`
         })
     });
@@ -104,6 +106,7 @@ function addCartClicked(event) {
     let price =
         shopProducts.getElementsByClassName("product-price")[0].innerText;
     let productImg = shopProducts.getElementsByClassName("product-img")[0].src;
+
     addProductToCart(title, price, productImg);
     updateTotal();
 }
@@ -146,6 +149,4 @@ function buyButtonClicked() {
     }
     updateTotal();
 }
-document
-    .getElementsByClassName(".btn-buy")[0]
-    .addEventListener("click", buyButtonClicked);
+document.getElementsByClassName("btn-buy")[0].addEventListener("click", buyButtonClicked);

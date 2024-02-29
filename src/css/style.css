@@ -9,6 +9,10 @@ body {
     width: 100%;
 }
 
+a{
+    color: #171427;;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -20,6 +24,10 @@ header {
 
 section {
     padding: 4rem 0 3rem;
+}
+
+main{
+    background-color: rgb(224, 233, 240);
 }
 
 .nav {
@@ -169,6 +177,7 @@ section {
 .product-box{
     position: relative;
     width: 250px;
+    background-color: #fff;
 }
 
 .product-box:hover{
