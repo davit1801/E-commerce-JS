@@ -9,26 +9,40 @@ body {
     width: 100%;
 }
 
-a{
-    color: #171427;;
+a {
+    color: #171427;
 }
 
-/* header {
+header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 80px;
     background-color: #fff;
     z-index: 100;
-} */
+}
 
 section {
     padding: 4rem 0 3rem;
 }
 
-/* main{
-    background-color: rgb(224, 233, 240);
-} */
+main {
+    background-color: #e9eef5;
+    padding-top: 20px;
+}
+
+.section-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#cart-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
 
 .nav {
     display: flex;
@@ -37,14 +51,22 @@ section {
     padding: 20px 0;
 }
 
-.logo {
-    font-size: 1.1rem;
-    font-weight: 400;
+.navigation {
+    width: 500px;
 }
 
-#cart-icon {
-    font-size: 1.8rem;
-    cursor: pointer;
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item {
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.nav-item:hover {
+    color: rgb(16, 124, 255);
 }
 
 .cart{
@@ -155,13 +177,6 @@ section {
 
 }
 
-.section-title{
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
 .shop{
     margin-top: 2rem;
 }
@@ -178,6 +193,7 @@ section {
     position: relative;
     width: 250px;
     background-color: #fff;
+    padding: 10px;
 }
 
 .product-box:hover{
@@ -218,10 +234,16 @@ section {
     font-weight: 500;
 }
 
+.price-cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .add-cart{
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
-    right: 0;
+    right: 0; */
     background-color: #171427;
     color: #fff;
     padding: 10px;
@@ -232,12 +254,21 @@ section {
     background-color: hsl(249, 32%, 17%);
 }
 
-
-/* Responsive */
-
-@media (max-width:1080px){
-    body {
-        padding: 0 40px;
-    }
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
 }
 
+.sc-media{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sc-media img {
+    width: 40px;
+}

@@ -14,11 +14,7 @@ async function getData() {
         const button = addCart[i];
         button.addEventListener("click", addCartClicked);
     }
-    
 }
-
-
-getData();
 
 // Create Products List
 function createProduct(product) {
@@ -30,14 +26,18 @@ function createProduct(product) {
         <img src="${item.images[0]}" alt="" class="product-img" />
         </div>
         <h3 class="product-title">${item.title}</h3>
+        <div class="price-cart">
         <span class="product-price">${item.price}$</span>
-        <i class="bx bx-shopping-bag add-cart"></i>`;
+        <i class="bx bx-shopping-bag add-cart"></i>
+        </div>`;
         shopContent.appendChild(productBox);
         productBox.addEventListener("click",() => {
             window.location.href = `description.html?id=${item.id}`
         })
     });
 }
+
+getData();
 
 // Open Cart
 
@@ -75,10 +75,6 @@ let quantityInputs = document.querySelectorAll(".cart-quantity");
 quantityInputs.forEach((el) => {
     el.addEventListener("change", quantityChanged);
 });
-// for (let i = 0; i < quantityInputs.length; i++) {
-//     let input = quantityInputs[i];
-//     input.addEventListener("change", quantityChanged);
-// }
 
 // Update Total
 function updateTotal() {
