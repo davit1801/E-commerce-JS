@@ -26,14 +26,19 @@ function createProduct(product) {
         <img src="${item.images[0]}" alt="" class="product-img" />
         </div>
         <h3 class="product-title">${item.title}</h3>
-        <div class="price-cart">
+
         <span class="product-price">${item.price}$</span>
         <i class="bx bx-shopping-bag add-cart"></i>
-        </div>`;
+`;
         shopContent.appendChild(productBox);
-        productBox.addEventListener("click",() => {
-            window.location.href = `description.html?id=${item.id}`
-        })
+        productBox.addEventListener("click", (event) => {
+            console.log(event);
+            if (event.target.localName === "i") {
+                event.preventDefault();
+            } else {
+                window.location.href = `description.html?id=${item.id}`;
+            }
+        });
     });
 }
 
@@ -89,7 +94,7 @@ function updateTotal() {
         const price = parseFloat(priceElement.innerText.replace("$", ""));
         const quantity = quantityElement.value;
         total = total + price * quantity;
-}
+    }
     document.getElementsByClassName("total-price")[0].innerText = "$" + total;
 }
 
@@ -111,12 +116,7 @@ function addProductToCart(title, price, productImg) {
     const cartShopBox = document.createElement("div");
     cartShopBox.classList.add("cart-box");
     const cartItems = document.getElementsByClassName("cart-content")[0];
-    const cartItemsNames =
-        cartItems.getElementsByClassName("cart-product-title");
-    // for (let i = 0; i < cartItemsNames.length; i++) {
-    //     alert("You have already add this item to cart");
-    // }
-
+    const cartItemsNames = cartItems.getElementsByClassName("cart-product-title");
     const cartBoxContent = `
     <img src="${productImg}" alt="" class="cart-img">
     <div class="detail-box">
@@ -145,4 +145,6 @@ function buyButtonClicked() {
     }
     updateTotal();
 }
-document.getElementsByClassName("btn-buy")[0].addEventListener("click", buyButtonClicked);
+document
+    .getElementsByClassName("btn-buy")[0]
+    .addEventListener("click", buyButtonClicked);
