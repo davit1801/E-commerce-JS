@@ -287,13 +287,13 @@ main {
     .container {
         max-width: 524px;
     }
-    main{
+    main {
         margin-top: 100px;
     }
-    section{
+    section {
         padding: 0 0;
     }
-    .nav{
+    .nav {
         flex-direction: column;
     }
     .sc-media {
@@ -305,9 +305,9 @@ main {
     .shop-content {
         justify-content: center;
     }
-    #cart-icon{
+    #cart-icon {
         position: absolute;
-        right:50px;
+        right: 50px;
         top: 20px;
     }
 }
