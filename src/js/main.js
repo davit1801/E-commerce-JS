@@ -69,16 +69,13 @@ function createSlides (data) {
     })
     $('.slider-box').slick({
         slidesToShow: 3,
-        slidesToScroll: 5,
+        slidesToScroll: 45,
         autoplay: true,
         autoplaySpeed: 2000,
         adaptiveHeight:true,
+        arrows:true,
+        centerMode:true,
       });
-    // $('.slider-box').slick({
-    //     dots:true,
-    //     arrows:true,
-    //     centerMode:true,
-    // });
 }
 
 
