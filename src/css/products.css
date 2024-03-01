@@ -213,7 +213,7 @@ main {
 
 .product-img{
     max-width: 100%;
-    max-height: 150px;
+    height: 150px;
 
 }
 
@@ -272,3 +272,39 @@ main {
 .sc-media img {
     width: 40px;
 }
+
+
+
+@media (max-width:1080px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .navigation {
+        width: 300px;
+    }
+
+    .shop-content{
+        justify-content: center;
+        gap: 3rem;
+    }
+}
+
+@media (max-width:840px) {
+    .container {
+        max-width: 524px;
+    }
+
+    .sc-media{
+        width: 250px;
+    }
+    .sc-media img {
+        width: 35px;
+    }
+    .shop-content{
+        justify-content: center;
+    }
+}
+
+
+

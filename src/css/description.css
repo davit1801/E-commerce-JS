@@ -158,9 +158,14 @@ header {
     gap: 50px;
     background-color: #fff;
     align-items: center;
+    padding: 10px 40px;
 }
 .description{
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .item-img {
@@ -228,4 +233,43 @@ header {
 
 .sc-media img {
     width: 40px;
+}
+
+
+@media (max-width:1080px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .navigation {
+        width: 300px;
+    }
+    .description-content{
+        /* max-width: 600px; */
+        justify-content: space-between;
+    }
+    .description{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width:768px) {
+    .description-content{
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+    }
+}
+
+@media (max-width:768px){
+    .container {
+        max-width: 300px;
+    }
+    .item-img {
+        height: 200px;
+        padding: 20px;
+    }
 }
