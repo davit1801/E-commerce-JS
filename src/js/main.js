@@ -4,9 +4,7 @@ const cartIcon = document.querySelector("#cart-icon");
 const cart = document.querySelector(".cart");
 const closeCart = document.querySelector("#close-cart");
 const popularItemsBox = document.querySelector(".popular-products");
-const sliderBox = document.querySelector(".slider-box");
-const burgerMenu = document.querySelector(".burger");
-const navigation = document.querySelector(".navigation");
+const slider = document.querySelector(".slider");
 
 // Get Data From API
 async function getData() {
@@ -50,7 +48,6 @@ function bestProduct(data) {
     });
 }
 
-
 // Slider 
 async function getDataForslider() {
     const url = `https://dummyjson.com/products?limit=45`;
@@ -64,30 +61,28 @@ getDataForslider();
 // Create Slides
 function createSlides (data) {
     data.products.forEach(el => {
-        const slide = document.createElement("div")
-        slide.classList.add("slide");
-        slide.innerHTML = `<img src="${el.images[0]}">`
-        sliderBox.appendChild(slide);
-        slide.addEventListener("click",() => {
+        const sliderItem = document.createElement("div")
+        sliderItem.classList.add("slider-item");
+        sliderItem.innerHTML = `<img src="${el.images[0]}">`
+        slider.appendChild(sliderItem);
+        sliderItem.addEventListener("click",() => {
             window.location.href = `description.html?id=${el.id}`
         })
     })
-    // $('.slider-box').slick({
-    //     infinite: true,
-    //     slidesToShow: 3,
-    //     slidesToScroll: 3,
-    //     autoplay:true,
-    //     dots:true,
-    //   });
-    
-    $('.slider-box').slick();
-
-    
-
+    $(document).ready(function () {
+        $('.slider').slick({
+            arrows:true,
+            dots:true,
+            adaptiveHeight:true,
+            slidesToShow:3,
+            slidesToScroll:3,
+            speed:1000,
+            easing:'ease',
+            infinite:true,
+            initialSlide:0,
+            autoplay:true,
+            autoplaySpeed:1000,
+            pauseOnHover:true,
+        });
+    });
 }
-
-// Burger Menu open/close
-burgerMenu.addEventListener("click",() => {
-    navigation.classList.toggle("open");
-})
-
