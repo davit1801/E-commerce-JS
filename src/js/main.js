@@ -4,7 +4,9 @@ const cartIcon = document.querySelector("#cart-icon");
 const cart = document.querySelector(".cart");
 const closeCart = document.querySelector("#close-cart");
 const popularItemsBox = document.querySelector(".popular-products");
-const sliderBox = document.querySelector(".slider-box")
+const sliderBox = document.querySelector(".slider-box");
+const burgerMenu = document.querySelector(".burger");
+const navigation = document.querySelector(".navigation");
 
 // Get Data From API
 async function getData() {
@@ -66,17 +68,26 @@ function createSlides (data) {
         slide.classList.add("slide");
         slide.innerHTML = `<img src="${el.images[0]}">`
         sliderBox.appendChild(slide);
+        slide.addEventListener("click",() => {
+            window.location.href = `description.html?id=${el.id}`
+        })
     })
-    $('.slider-box').slick({
-        slidesToShow: 3,
-        slidesToScroll: 45,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        adaptiveHeight:true,
-        arrows:true,
-        centerMode:true,
-      });
+    // $('.slider-box').slick({
+    //     infinite: true,
+    //     slidesToShow: 3,
+    //     slidesToScroll: 3,
+    //     autoplay:true,
+    //     dots:true,
+    //   });
+    
+    $('.slider-box').slick();
+
+    
+
 }
 
-
+// Burger Menu open/close
+burgerMenu.addEventListener("click",() => {
+    navigation.classList.toggle("open");
+})
 

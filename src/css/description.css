@@ -17,6 +17,7 @@ header {
 #cart-icon {
     font-size: 1.8rem;
     cursor: pointer;
+    visibility: hidden;
 }
 
 .nav {
@@ -253,6 +254,21 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+}
+
+@media (max-width: 840px){
+    .container {
+        max-width: 524px;
+    }
+    main{
+        margin-top: 100px;
+    }
+    section{
+        padding: 0 0;
+    }
+    .nav{
+        flex-direction: column;
     }
 }
 
